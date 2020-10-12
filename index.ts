@@ -63,7 +63,8 @@ io.on("connection", (socket) => {
 		handlePlayerReady(socket, gameId, callback)
     );
     socket.on("fire", handleFire);
-    socket.on("fireReply", handleFireReply);
+	socket.on("fireReply", handleFireReply);
+	socket.on("gameOver", handleGameOver);
 
 	socket.on("disconnect", () => handleDisconnect(socket));
 });
@@ -168,6 +169,12 @@ function handleFire(fireEvent: FireEvent) {
 
 function handleFireReply(fireReplyEvent: FireReplyEvent) {
     io.to(fireReplyEvent.gameId).emit("fireReply", fireReplyEvent);
+}
+
+function handleGameOver(gameId: string) {
+	if (games[gameId]) {
+		games[gameId].forEach(game => game.ready = false);
+	}
 }
 
 function startGame(gameId: string) {
