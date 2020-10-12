@@ -6,7 +6,6 @@
   "engines": { "node": "8.11.1" },
   "scripts": {
     "start": "node dist/index.js",
-    "build": "tsc && npm run start",
     "startDev": "nodemon",
     "postinstall": "tsc && mv -i -v public dist/",
     "deploy": "git add . && git commit -m Heroku && git push heroku master"
