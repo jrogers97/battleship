@@ -13,10 +13,10 @@ const server: Server = http.createServer(app);
 const io: SocketIO.Server = socketio(server);
 
 // for static resources requested by index.html (css, js)
-app.use("/public", express.static(path.join(__dirname, "public")));
+app.use("dist/public", express.static(path.join(__dirname, "dist/public")));
 // send index.html for all requests
 app.get("/*", (req, res) => {
-	res.sendFile(__dirname + "/public/index.html");
+	res.sendFile(__dirname + "/dist/public/index.html");
 });
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
