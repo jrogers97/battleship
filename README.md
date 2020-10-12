@@ -3,5 +3,5 @@
 ### To use, visit .
 Or, to run locally...
 - clone repo
-- npm install
-- npm run start
+- "npm install"
+- "npm run start"
