@@ -287,7 +287,10 @@ $(document).ready(function () {
 		}
 		const gameLink = `${window.location.origin}/${socketGameId}`;
 		showInfoOverlay(
-			`Invite a friend:&nbsp;<a href="${gameLink}" target="_blank"> ${gameLink}</a>`
+			`<div>Invite a friend:
+				</br>
+				<input value=${gameLink} onclick="this.focus();this.select()" readonly="readonly" />
+			</div>`
 		);
 	}
 
@@ -442,7 +445,6 @@ $(document).ready(function () {
 	let newShipSpot;
 	let mouseOffset = [0, 0];
 
-	$(document).on("mousedown", (e) => e.preventDefault());
 	$(document).on("mouseup", () => {
 		if (heldShip) {
 			dragShip.hide();

@@ -253,6 +253,10 @@
     align-self: flex-start;
 }
 
+input {
+    width: 300px;
+}
+
 .btn {
     padding: 4px 6px;
     border: 1px solid black;

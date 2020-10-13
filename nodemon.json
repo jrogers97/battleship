@@ -2,5 +2,5 @@
     "watch": [""],
     "ext": ".ts,.js",
     "ignore": ["public/*.js"],
-    "exec": "ts-node ./index.ts"
+    "exec": "node ./index.js"
 }
